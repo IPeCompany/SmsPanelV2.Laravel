@@ -1,6 +1,6 @@
 # Very short description of the package
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/cryptommer/Smsir.svg?style=flat-square)](https://packagist.org/packages/cryptommer/smsir)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/cryptommer/smsir.svg?style=flat-square)](https://packagist.org/packages/cryptommer/smsir)
 [![Quality Score](https://img.shields.io/scrutinizer/g/cryptommer/Smsir.svg?style=flat-square)](https://scrutinizer-ci.com/g/cryptommer/Sms-ir)
 [![Total Downloads](https://img.shields.io/packagist/dt/cryptommer/Smsir.svg?style=flat-square)](https://packagist.org/packages/cryptommer/smsir)
 
@@ -11,7 +11,7 @@ This is a official [sms.ir](https://sms.ir) laravel package
 You can install the package via composer:
 
 ```bash
-composer require cryptommer/sms-ir
+composer require cryptommer/smsir
 ```
 
 ## Usage
