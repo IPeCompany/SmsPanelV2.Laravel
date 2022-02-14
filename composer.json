@@ -1,0 +1,51 @@
+{
+    "name": "cryptommer/smsir",
+    "description": "Official sms.ir New Panel laravel repository",
+    "keywords": [
+        "Cryptommer",
+        "Smsir"
+    ],
+    "homepage": "https://github.com/cryptommer/Smsir",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Pouya Biglari",
+            "email": "cyberman9000@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "illuminate/support": "^8.0",
+        "guzzlehttp/guzzle": "*",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Cryptommer\\Smsir\\": "src"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Cryptommer\\Smsir\\SmsirServiceProvider"
+            ],
+            "aliases": {
+                "Smsir": "Smsir"
+            }
+        }
+    }
+}

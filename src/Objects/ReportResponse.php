@@ -1,0 +1,58 @@
+<?php
+
+namespace Cryptommer\Smsir\Objects;
+
+use Psr\Http\Message\StreamInterface;
+
+class ReportResponse {
+
+    /**
+     * @var String
+     */
+    public string $Status;
+
+    /**
+     * @var string
+     */
+    public string $Message;
+
+    /**
+     * @var ReportData|ReportData[]
+     */
+    public $Data;
+
+    public function __construct($response) {
+        $this->Status = $response['status'];
+        $this->Message = $response['message'];
+        if (array_key_exists('messageId', $response['data'])) {
+            $this->Data = new ReportData($response['data']);
+        } else {
+            foreach ($response['data'] as $data) {
+                $this->Data[] = new ReportData($data);
+            }
+        }
+    }
+
+    /**
+     * @return ReportData|ReportData[]
+     */
+    public function getData(): ReportData {
+        return $this->Data;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMessage(): string {
+        return $this->Message;
+    }
+
+    /**
+     * @return String
+     */
+    public function getStatus(): string {
+        return $this->Status;
+    }
+
+
+}
