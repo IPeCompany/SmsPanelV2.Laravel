@@ -31,17 +31,18 @@ Get account credit and line numbers
 
 [Document](Setting.md)
 
+### Responses
+Response Models
+
 ### Translations
+#### Delivery Status
 ```php
 __(`smsir.DeliveryStatus.$delivery_status`);
 ```
+#### Request Status
 ```php
 __(`smsir.SendStatus.$status`);
 ```
-
-
-### Responses
-Response Models
 
 [Document](Response.md)
 
