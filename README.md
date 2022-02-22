@@ -13,6 +13,10 @@ You can install the package via composer:
 ```bash
 composer require cryptommer/smsir
 ```
+publish provider
+```
+php artisan vendor:publsh 
+```
 
 Add this to env file
 ```
