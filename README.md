@@ -14,6 +14,12 @@ You can install the package via composer:
 composer require cryptommer/smsir
 ```
 
+Add this to env file
+```
+SMSIR_API_KEY=
+SMSIR_LINE_NUMBER=
+```
+
 ## Usage
 
 ### Sending Message
