@@ -16,9 +16,9 @@
         }
     ],
     "require": {
-        "php": "^7.4|^8.0",
-        "illuminate/support": "^8.0",
-        "guzzlehttp/guzzle": "*",
+        "php": "^7.0|^8.0",
+        "illuminate/support": "*",
+        "guzzlehttp/guzzle": "6.5.5",
         "ext-json": "*"
     },
     "require-dev": {

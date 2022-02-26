@@ -12,7 +12,7 @@ class Report {
     /**
      * @var Smsir
      */
-    private Smsir $smsir;
+    private $smsir;
 
     /**
      * @param Smsir $smsir
