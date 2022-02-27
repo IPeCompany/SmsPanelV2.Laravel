@@ -13,17 +13,17 @@ class VerifyResponse {
     /**
      * @var String
      */
-    public string $Status;
+    public $Status;
 
     /**
      * @var string
      */
-    public string $Message;
+    public $Message;
 
     /**
      * @var VerifyData|
      */
-    public VerifyData $Data;
+    public $Data;
 
     public function __construct($response) {
         $this->Status = $response['status'];

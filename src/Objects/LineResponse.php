@@ -8,12 +8,12 @@ class LineResponse {
     /**
      * @var int
      */
-    public int $Status;
+    public $Status;
 
     /**
      * @var string
      */
-    public string $Message;
+    public $Message;
 
     /**
      * @var int[]

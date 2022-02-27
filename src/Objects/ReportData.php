@@ -12,42 +12,42 @@ class ReportData {
     /**
      * @var string
      */
-    public string $MessageId;
+    public $MessageId;
 
     /**
      * @var int
      */
-    public int $Mobile;
+    public $Mobile;
 
     /**
      * @var string
      */
-    public string $MessageText;
+    public $MessageText;
 
     /**
      * @var int
      */
-    public int $SendDateTime;
+    public $SendDateTime;
 
     /**
      * @var int
      */
-    public int $LineNumber;
+    public $LineNumber;
 
     /**
      * @var float
      */
-    public float $Cost;
+    public $Cost;
 
     /**
      * @var int|null
      */
-    public ?int $DeliveryState;
+    public $DeliveryState;
 
     /**
      * @var int|null
      */
-    public ?int $DeliveryDateTime;
+    public $DeliveryDateTime;
 
     /**
      * @param $data array
@@ -101,14 +101,14 @@ class ReportData {
     /**
      * @return int|null
      */
-    public function getDeliveryDateTime(): ?int {
+    public function getDeliveryDateTime() {
         return $this->DeliveryDateTime;
     }
 
     /**
      * @return int|null
      */
-    public function getDeliveryState(): ?int {
+    public function getDeliveryState() {
         return $this->DeliveryState;
     }
 

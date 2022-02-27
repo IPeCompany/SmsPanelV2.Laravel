@@ -13,17 +13,17 @@ class LikeToLikeResponse {
     /**
      * @var String
      */
-    public string $Status;
+    public $Status;
 
     /**
      * @var string
      */
-    public string $Message;
+    public $Message;
 
     /**
      * @var LikeToLikeData|
      */
-    public LikeToLikeData $Data;
+    public $Data;
 
     public function __construct($response) {
         $this->Status = $response['status'];

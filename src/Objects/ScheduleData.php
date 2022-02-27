@@ -12,12 +12,12 @@ class ScheduleData {
     /**
      * @var float
      */
-    public float $ReturnedCreditCount;
+    public $ReturnedCreditCount;
 
     /**
      * @var int
      */
-    public int $SmsCount;
+    public $SmsCount;
 
     public function __construct(array $data) {
         $this->ReturnedCreditCount = $data['returnedCreditCount'];

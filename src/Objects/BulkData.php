@@ -12,17 +12,17 @@ class BulkData {
     /**
      * @var String
      */
-    public string $PackId;
+    public $PackId;
 
     /**
      * @var array
      */
-    public array $MessageIds;
+    public $MessageIds;
 
     /**
      * @var float
      */
-    public float $Cost;
+    public $Cost;
 
     /**
      * @param $data array
@@ -36,7 +36,7 @@ class BulkData {
     /**
      * @param float $Cost
      */
-    public function setCost(float $Cost): void
+    public function setCost(float $Cost)
     {
         $this->Cost = $Cost;
     }
@@ -52,7 +52,7 @@ class BulkData {
     /**
      * @param array $MessageIds
      */
-    public function setMessageIds(array $MessageIds): void
+    public function setMessageIds(array $MessageIds)
     {
         $this->MessageIds = $MessageIds;
     }
@@ -68,7 +68,7 @@ class BulkData {
     /**
      * @param String $PackId
      */
-    public function setPackId(string $PackId): void
+    public function setPackId(string $PackId)
     {
         $this->PackId = $PackId;
     }

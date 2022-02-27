@@ -8,12 +8,12 @@ class CreditResponse {
     /**
      * @var int
      */
-    public int $Status;
+    public $Status;
 
     /**
      * @var string
      */
-    public string $Message;
+    public $Message;
 
     /**
      * @var float

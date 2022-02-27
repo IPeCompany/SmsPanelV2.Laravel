@@ -9,12 +9,12 @@ class Response {
     /**
      * @var String
      */
-    public string $Status;
+    public $Status;
 
     /**
      * @var string
      */
-    public string $Message;
+    public $Message;
 
     /**
      * @var BulkResponse|
@@ -30,7 +30,7 @@ class Response {
     /**
      * @param $Data
      */
-    public function setData($Data): void
+    public function setData($Data)
     {
         $this->Data = $Data;
     }
@@ -45,7 +45,7 @@ class Response {
     /**
      * @param string $Message
      */
-    public function setMessage(string $Message): void {
+    public function setMessage(string $Message) {
         $this->Message = $Message;
     }
 
@@ -59,14 +59,14 @@ class Response {
     /**
      * @param String $Status
      */
-    public function setStatus(string $Status): void {
+    public function setStatus(string $Status) {
         $this->Status = $Status;
     }
 
     /**
      * @return String
      */
-    public function getStatus(): string {
+    public function getStatus() {
         return $this->Status;
     }
 

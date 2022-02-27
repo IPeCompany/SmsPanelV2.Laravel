@@ -9,24 +9,27 @@ class ReceiveData {
     /**
      * @var int
      */
-    public int $Mobile;
+    public $Mobile;
 
     /**
      * @var String
      */
-    public string $MessageText;
+    public $MessageText;
 
     /**
-     * @var int
+     * @var int|null
      */
-    public int $Number;
+    public $Number;
 
     /**
-     * @var int
+     * @var int|null
      */
-    public int $ReceivedDateTime;
+    public $ReceivedDateTime;
 
-    public function __construct(StreamInterface $response) {
+    /**
+     * @param StreamInterface|array $response
+     */
+    public function __construct($response) {
         $this->Mobile = $response['mobile'];
         $this->MessageText = $response['messageText'];
         $this->Number = $response['number'];
@@ -36,14 +39,16 @@ class ReceiveData {
     /**
      * @return int
      */
-    public function getMobile(): int {
+    public function getMobile(): int
+    {
         return $this->Mobile;
     }
 
     /**
      * @return String
      */
-    public function getMessageText(): string {
+    public function getMessageText(): string
+    {
         return $this->MessageText;
     }
 

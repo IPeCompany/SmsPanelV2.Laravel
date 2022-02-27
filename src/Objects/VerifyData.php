@@ -12,12 +12,12 @@ class VerifyData {
     /**
      * @var string
      */
-    public string $MessageId;
+    public $MessageId;
 
     /**
      * @var float
      */
-    public float $Cost;
+    public $Cost;
 
     /**
      * @param $data array
@@ -30,7 +30,7 @@ class VerifyData {
     /**
      * @param float $Cost
      */
-    public function setCost(float $Cost): void
+    public function setCost(float $Cost)
     {
         $this->Cost = $Cost;
     }
@@ -46,7 +46,7 @@ class VerifyData {
     /**
      * @param string $MessageId
      */
-    public function setMessageId(string $MessageId): void
+    public function setMessageId(string $MessageId)
     {
         $this->MessageId = $MessageId;
     }
