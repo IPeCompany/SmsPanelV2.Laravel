@@ -48,6 +48,13 @@ You can read about "ScheduleResponse" [here](Response.md#Schedule Response)
 Sending verification code to mobile number with predefined template
 ```php
 /**
+ * 
+ * @required $name string
+ * @required $value string
+ */
+$parameter = new \Cryptommer\Smsir\Objects\Parameters($name, $value)
+$parameters = array($parameter) 
+/**
  * @required string $mobile
  * @required int $templateId
  * @required Parameters[] $parameters
