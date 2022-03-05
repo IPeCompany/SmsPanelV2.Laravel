@@ -77,7 +77,7 @@ class Smsir {
      * @throws \JsonException
      */
     public function get(string $path, array $params = []) {
-        $response = $this->client->get($path, ['body' => json_encode($params)]);
+        $response = $this->client->get($path, ['q' => json_encode($params)]);
         if ($response->getStatusCode() !== 200) {
             throw new HttpException(__('smsir.error.'.$response->getStatusCode()));
         }
