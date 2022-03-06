@@ -14,7 +14,7 @@
 </head>
 <body class="sidebar-mini" style="height: auto" data-scrollbar-auto-hide="n">
 <div class="wrapper">
-    @include('menu')
+    @include('Smsir::components.menu')
     <div class="content-wrapper">
         @yield('body')
     </div>
