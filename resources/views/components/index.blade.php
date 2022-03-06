@@ -9,6 +9,7 @@
     <meta name="robots" content="noindex">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="/vendor/smsir/rtl.css">
     <title>{{config('smsirlaravel.title')}}</title>
 </head>
 <body class="sidebar-mini" style="height: auto" data-scrollbar-auto-hide="n">
