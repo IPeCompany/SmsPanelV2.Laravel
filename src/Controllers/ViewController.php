@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Route;
 class ViewController extends Controller {
 
     public function sendbulk(Request $request) {
-        return view('smsir::sendbulk')->with([
+        return view('Smsir::sendbulk')->with([
             'status' => $request->get('status'),
             'message' => $request->get('message')
         ]);
@@ -20,7 +20,7 @@ class ViewController extends Controller {
     public function received(Request $request) {
         $report = (new Smsir())->Report();
         $response = $report->TodayReceived($request->get('page_size'), $request->get('page_number'));
-        return view('smsir::received', [
+        return view('Smsir::received', [
             'received' => $response->Data
         ]);
     }
