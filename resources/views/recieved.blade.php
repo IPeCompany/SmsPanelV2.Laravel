@@ -1,6 +1,9 @@
 @extends('Smsir::components.index')
 @section('body')
 <div class="row">
+    <h3>پیام های دریافتی امروز</h3>
+</div>
+<div class="row">
     <div class="col-12">
         <div class="card">
             <div class="card-body">
