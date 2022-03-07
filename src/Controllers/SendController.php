@@ -20,7 +20,7 @@ class SendController extends Controller {
         $mobiles = explode(PHP_EOL,$request->get('mobiles'));
         $message = $request->get('message');
         $response = $this->smsir->Send()->Bulk($message,$mobiles);
-        return view('smsir::sendbulk')->with([
+        return view('Smsir::sendbulk')->with([
             'status' => $response->Status,
             'message' => $response->Message
         ]);
