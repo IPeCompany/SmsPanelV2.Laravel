@@ -26,7 +26,7 @@ class ViewController extends Controller {
         $report = (new Smsir())->Report();
         $response = $report->TodayReceived($request->get('page_size')??10, $request->get('page_number')??1);
         return view('Smsir::todayreceived', [
-            'received' => $response->Data
+            'messages' => $response->Data
         ]);
     }
 
@@ -39,7 +39,7 @@ class ViewController extends Controller {
         $report = (new Smsir())->Report();
         $response = $report->Today($request->get('page_size')??10, $request->get('page_number')??1);
         return view('Smsir::todaysent', [
-            'received' => $response->Data
+            'messages' => $response->Data
         ]);
     }
 
