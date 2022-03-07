@@ -15,22 +15,22 @@
                                 class="form-control"
                                 id="mobiles"
                                 name="mobiles"
-                                rows="7">
-                            </textarea>
+                                rows="7"></textarea>
                         </div>
                         <div class="col-6">
                             <label for="message">پیام</label>
                         </div>
-                        <div class="col-12">
+                        <div class="col-6">
                             <textarea
                                 class="form-control"
                                 id="message"
                                 name="message"
                                 rows="3"
-                            >
-                            </textarea>
+                            ></textarea>
                         </div>
-                        <button class="btn  btn-primary" type="submit">ارسال</button>
+                        <div class="col-3">
+                            <button class="btn btn-primary" type="submit">ارسال</button>
+                        </div>
                     </div>
                 </form>
             </div>

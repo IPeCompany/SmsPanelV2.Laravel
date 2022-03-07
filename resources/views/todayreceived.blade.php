@@ -23,6 +23,14 @@
                         </tr>
                     @endforeach
                 </table>
+                <div class="row">
+                    @isset($next_page)
+                        <a class="btn btn-outline-light" href="{{ route('todaysent',[ 'page_num' => $next_page ]) }}">بعدی</a>
+                    @endisset
+                    @isset($previous_page)
+                        <a class="btn btn-outline-light" href="{{ route('todaysent',[ 'page_num' => $previous_page ]) }}">قبلی</a>
+                    @endisset
+                </div>
             </div>
         </div>
     </div>
