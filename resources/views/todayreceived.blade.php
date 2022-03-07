@@ -1,9 +1,9 @@
 @extends('Smsir::components.index')
 @section('body')
-<div class="row">
+<div class="row m-1">
     <h3>پیام های دریافتی امروز</h3>
 </div>
-<div class="row">
+<div class="row m-1">
     <div class="col-12">
         <div class="card">
             <div class="card-body">
@@ -14,6 +14,7 @@
                         <th>پیام</th>
                         <th>تاریخ</th>
                     </tr>
+                    @if(empty(!$messages))
                     @foreach($messages as $message)
                         <tr>
                             <td>{{ $message->Number }}</td>
@@ -22,6 +23,7 @@
                             <td>{{ $message->ReceivedDateTime }}</td>
                         </tr>
                     @endforeach
+                    @endif
                 </table>
                 <div class="row">
                     @isset($next_page)
