@@ -2,8 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::prefix('/smsir')->name('smsir')->group(function () {
-    Route::prefix('/send')->name('send')->group(function () {
+Route::prefix('/smsir')->name('smsir.')->group(function () {
+    Route::prefix('/send')->name('send.')->group(function () {
         Route::get('/bulk', [\Cryptommer\Smsir\Controllers\ViewController::class, 'SendBulk'])->name('bulk');
         Route::post('/bulk', [\Cryptommer\Smsir\Controllers\SendController::class, 'SendBulk']);
     });
