@@ -9,18 +9,15 @@
                         <div class="col-6">
                             <label for="mobiles">موبایل</label>
                             <span class="sm">هر شماره موبایل در یک خط</span>
-                        </div>
-                        <div class="col-6">
                             <textarea
                                 class="form-control"
                                 id="mobiles"
                                 name="mobiles"
                                 rows="7"></textarea>
                         </div>
+                        <div class="col-12"></div>
                         <div class="col-6">
                             <label for="message">پیام</label>
-                        </div>
-                        <div class="col-6">
                             <textarea
                                 class="form-control"
                                 id="message"
