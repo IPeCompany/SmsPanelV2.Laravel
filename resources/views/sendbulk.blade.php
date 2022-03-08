@@ -1,6 +1,9 @@
 @extends('Smsir::components.index')
 @section('body')
 <div class="row m-1">
+    <h3>ارسال پیام</h3>
+</div>
+<div class="row m-1">
     <div class="col-12">
         <div class="card">
             <div class="card-body">
@@ -25,6 +28,7 @@
                                 rows="3"
                             ></textarea>
                         </div>
+                        <div class="col-12"></div>
                         <div class="col-3">
                             <button class="btn btn-primary" type="submit">ارسال</button>
                         </div>
