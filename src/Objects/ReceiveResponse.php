@@ -10,17 +10,17 @@ class ReceiveResponse {
     /**
      * @var String
      */
-    public string $Status;
+    public $Status;
 
     /**
      * @var string
      */
-    public string $Message;
+    public $Message;
 
     /**
      * @var ReceiveData[]
      */
-    public array $Data;
+    public $Data;
 
     public function __construct($response) {
         $this->Status = $response['status'];

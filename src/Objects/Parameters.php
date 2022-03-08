@@ -4,8 +4,8 @@ namespace Cryptommer\Smsir\Objects;
 
 class Parameters {
 
-    public string $Name;
-    public string $Value;
+    public $Name;
+    public $Value;
 
     public function __construct(string $name, string $value) {
         $this->Name = $name;

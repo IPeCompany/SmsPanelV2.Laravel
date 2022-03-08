@@ -12,17 +12,17 @@ class BulkResponse {
     /**
      * @var String
      */
-    public string $Status;
+    public $Status;
 
     /**
      * @var string
      */
-    public string $Message;
+    public $Message;
 
     /**
      * @var BulkData|
      */
-    public BulkData $Data;
+    public $Data;
 
     public function __construct($response) {
         $this->Status = $response['status'];

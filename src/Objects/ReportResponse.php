@@ -9,12 +9,12 @@ class ReportResponse {
     /**
      * @var String
      */
-    public string $Status;
+    public $Status;
 
     /**
      * @var string
      */
-    public string $Message;
+    public $Message;
 
     /**
      * @var ReportData|ReportData[]

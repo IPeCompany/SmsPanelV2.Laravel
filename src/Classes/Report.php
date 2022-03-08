@@ -12,7 +12,7 @@ class Report {
     /**
      * @var Smsir
      */
-    private Smsir $smsir;
+    private $smsir;
 
     /**
      * @param Smsir $smsir
@@ -96,7 +96,7 @@ class Report {
      * @throws \JsonException
      */
     public function LatestReceived(int $count = 100): ReceiveResponse {
-        $response = $this->smsir->get('/v1/send/receive/latest',[
+        $response = $this->smsir->get('/v1/receive/latest',[
             'count' => $count
         ]);
         return new ReceiveResponse($response);
@@ -113,7 +113,7 @@ class Report {
      * @throws \JsonException
      */
     public function TodayReceived(int $pageSize = 10, int $pageNumber = 1): ReceiveResponse {
-        $response = $this->smsir->get('/v1/send/receive/live',[
+        $response = $this->smsir->get('/v1/receive/live',[
             'pageSize' => $pageSize,
             'pageNumber' => $pageNumber
         ]);
@@ -133,7 +133,7 @@ class Report {
      * @throws \JsonException
      */
     public function ArchivedReceived(int $fromDate = null, int $toDate = null, int $pageSize = 10, int $pageNumber = 1): ReceiveResponse {
-        $response = $this->smsir->get('/v1/send/archive',[
+        $response = $this->smsir->get('/v1/receive/archive',[
             'fromDate' => $fromDate,
             'toDate' => $toDate,
             'pageSize' => $pageSize,
