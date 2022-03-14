@@ -48,6 +48,25 @@ Get account credit and line numbers
 ### Responses
 Response Models
 
+[Document](Response.md)
+
+### View Routes
+
+Sending sms
+```
+http://localhost:8000/smsir/send/bulk
+```
+
+Get Report of today sent sms
+```
+http://localhost:8000/smsir/report/sent/today
+```
+
+Get Report of today received sms
+```
+http://localhost:8000/smsir/report/sent/today
+```
+
 ### Translations
 #### Delivery Status
 ```php
@@ -57,8 +76,6 @@ __(`smsir.DeliveryStatus.$delivery_status`);
 ```php
 __(`smsir.SendStatus.$status`);
 ```
-
-[Document](Response.md)
 
 ### Changelog
 
