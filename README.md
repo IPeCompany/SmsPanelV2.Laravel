@@ -13,12 +13,12 @@ You can install the package via composer:
 ```bash
 composer require cryptommer/smsir
 ```
-publish provider
+publish provider (if you don't use laravel skip this)
 ```
 php artisan vendor:publish --provider Cryptommer\Smsir\SmsirServiceProvider
 ```
 
-Add this to env file
+Add this to env file (if you don't use laravel skip this)
 ```
 SMSIR_API_KEY=
 SMSIR_LINE_NUMBER=
@@ -26,9 +26,18 @@ SMSIR_LINE_NUMBER=
 
 ## Usage
 add this line to the beginning of any class that you want to use smsir functions
+### For Laravel
 ```php
 use Cryptommer\Smsir\Smsir;
 ```
+### Pure PHP 
+```php
+require __DIR__ . '/vendor/autoload.php';
+use Cryptommer\Smsir\Classes\Smsir;
+
+$smsir = new Smsir($line_number, $api_key)
+```
+
 
 ### Sending Message
 Sending messages to mobile numbers
@@ -50,7 +59,7 @@ Response Models
 
 [Document](Response.md)
 
-### View Routes
+### View Routes (for laravel users)
 
 Sending sms
 ```

@@ -2,6 +2,8 @@
 Get account credit and line numbers
 ```php
 $setting = smsir::Setting()
+or
+$setting = $smsir->Setting()
 ```
 You can read about Setting Response Models [here](Response.md#Setting Response Models)
 
