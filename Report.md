@@ -4,6 +4,8 @@ Get report of sent messages and received messages
 You can read about report response models [here](Response.md#Report Response Models)
 ```php
 $report = smsir::Report()
+or
+$report = $smsir->Report()
 ```
 
 ## Message

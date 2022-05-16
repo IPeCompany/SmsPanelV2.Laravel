@@ -2,6 +2,8 @@
 Sending messages to mobile numbers
 ```php
 $send = smsir::Send()
+or
+$send = $smsir->Send()
 ```
 
 You can read about sending messages responses [here](Response.md#Sending Message Response Models)

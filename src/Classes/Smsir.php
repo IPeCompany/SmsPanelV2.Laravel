@@ -18,16 +18,16 @@ class Smsir {
     private $client;
     public $LineNumber;
 
-    public function __construct() {
+    public function __construct($line_number = null, $api_key = null) {
         $this->client = new Client([
             'base_uri' => self::BASEURL,
             'headers' =>[
-                'X-API-KEY' => config('smsir.api-key'),
+                'X-API-KEY' => $api_key??config('smsir.api-key'),
                 'ACCEPT' => 'application/json',
                 'Content-Type' => 'application/json'
             ]
         ]);
-        $this->LineNumber = config('smsir.line-number');
+        $this->LineNumber = $line_number??config('smsir.line-number');
     }
 
     /**
