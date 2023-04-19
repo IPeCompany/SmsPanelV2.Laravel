@@ -1,6 +1,9 @@
 # Changelog
 
 All notable changes to `Smsir` will be documented in this file
+## 1.1.2 - 2023-15-2
+- Panel route can be disabled
+
 ## 1.1.1 - 2022-16-05
 - Pure php usage added
 
