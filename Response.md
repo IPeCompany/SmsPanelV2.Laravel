@@ -57,11 +57,11 @@ $response->Status
 /** @return string **/
 $response->Message
 /** @return ScheduleData **/
-$response_data = $reponse->Data
+$response_data = $response->Data
 /** @return int **/
-$reponse_data->MessageId
+$response_data->MessageId
 /** @return float **/
-$reponse_data->Cost
+$response_data->Cost
 ```
 
 
