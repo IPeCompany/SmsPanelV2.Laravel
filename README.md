@@ -15,7 +15,7 @@ composer require cryptommer/smsir
 ```
 publish provider (if you don't use laravel skip this)
 ```
-php artisan vendor:publish --provider Cryptommer\Smsir\SmsirServiceProvider
+php artisan vendor:publish --provider="Cryptommer\Smsir\SmsirServiceProvider"
 ```
 
 Add this to env file (if you don't use laravel skip this)
