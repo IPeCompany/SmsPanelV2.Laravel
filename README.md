@@ -30,6 +30,31 @@ add this line to the beginning of any class that you want to use smsir functions
 ```php
 use Cryptommer\Smsir\Smsir;
 ```
+#### Notification
+add this function to your model
+```php
+public function routeNotificationForSmsir() {
+    return $this->phone_number
+}
+```
+modify these lines in notification class
+```php
+public function via() {
+    return [\Cryptommer\Smsir\Notifications\SmsirChannel::class] //  or 'smsir'
+}
+```
+add this function to notification class
+```php
+public function toSmsir(object $notifiable) {
+    /**
+    * template_id string 
+    * parameters array of key and value that key equal to the key in template id
+    */
+    return new \Cryptommer\Smsir\Notifications\SmsirMessage()
+        ->template_id($template_id)
+        ->parameters($parameters)
+}
+```
 ### Pure PHP 
 ```php
 require __DIR__ . '/vendor/autoload.php';
