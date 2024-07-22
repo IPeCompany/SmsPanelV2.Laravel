@@ -3,6 +3,9 @@
 namespace Cryptommer\Smsir;
 
 use Cryptommer\Smsir\Classes\Smsir;
+use Cryptommer\Smsir\Notifications\SmsirChannel;
+use Illuminate\Notifications\ChannelManager;
+use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\ServiceProvider;
 
 class SmsirServiceProvider extends ServiceProvider
@@ -58,6 +61,18 @@ class SmsirServiceProvider extends ServiceProvider
         // Register the main class to use with the facade
         $this->app->singleton('Smsir', function () {
             return new Smsir();
+        });
+
+        $this->app->bind(SmsirChannel::class, function ($app) {
+            return new SmsirChannel(
+                $this->app->make(Smsir::class)
+            );
+        });
+
+        Notification::resolved(function (ChannelManager $service) {
+            $service->extend('smsir', function ($app) {
+                return $this->app->make(SmsirChannel::class);
+            });
         });
     }
 }
