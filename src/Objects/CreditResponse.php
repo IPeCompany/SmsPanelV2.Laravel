@@ -24,7 +24,7 @@ class CreditResponse {
      * @param $response
      */
     public function __construct($response) {
-        $this->Status = $response['data'];
+        $this->Status = $response['status'];
         $this->Message = $response['message'];
         $this->Data = $response['data'];
     }
