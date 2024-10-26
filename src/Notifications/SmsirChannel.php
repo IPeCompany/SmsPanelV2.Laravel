@@ -29,7 +29,9 @@ class SmsirChannel
 
         $message = $notification->toSmsir($notifiable);
 
-        $this->client->send()->verify($to, $message->template_id, $message->parameters);
+        $response = $this->client->send()->verify($to, $message->template_id, $message->parameters);
+
+        return $response;
     }
 
 
