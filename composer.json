@@ -27,7 +27,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Cryptommer\\Smsir\\": "src"
+            "Cryptommer\\Smsir\\": "src",
+            "Cryptommer\\Tests\\": "tests"
         }
     },
     "scripts": {
