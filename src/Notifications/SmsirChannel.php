@@ -8,7 +8,6 @@ use RuntimeException;
 
 class SmsirChannel
 {
-
     /**
      * @var Smsir
      */
@@ -38,6 +37,4 @@ class SmsirChannel
 
         return $response;
     }
-
-
 }
