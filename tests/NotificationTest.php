@@ -23,20 +23,54 @@ class NotificationTest extends TestCase
 
     public function testNotificationIsFired()
     {
-        Event::listen(NotificationSent::class, function (NotificationSent $event) {
-            $notification = $event->notification;
-            if($notification instanceof OrderReceiveNotification) {
-                $this->assertTrue(true);
+        $success = false;
+        Event::listen(NotificationSent::class, function (NotificationSent $event) use(&$success) {
+            if($event->notification instanceof OrderReceiveNotification) {
+                $success = true;
             }
         });
 
         // Fake model
-        $model = (new FakeModel);
-        $model->setAttribute('fullname', 'Ahmadreza Bashari');
-        $model->setAttribute('phone', '09xxxxxxxxx');
-        $this->notification->shouldReceive('toSmsir')
-        ->andReturn((new SmsirMessage())->template_id(1)->parameters([]));
+        $model = (new FakeModel)
+            ->setAttribute('fullname', 'Ahmadreza Bashari')
+            ->setAttribute('phone', '09xxxxxxxxx');
+
         // Send notification
+        FacadesNotification::sendNow([$model], $this->notification);
+
+        $this->assertTrue(($success) ? true : false);
+    }
+
+    public function testNotificationCannotFiredWithEmptyResponse()
+    {
+        $success = false;
+        Event::listen(NotificationSent::class, function (NotificationSent $event) use(&$success) {
+            if($event->notification instanceof OrderReceiveNotification && empty($event->response)) {
+                $success = true;
+            }
+        });
+
+        // Fake model
+        $model = (new FakeModelRouteNotificationEmpty)
+            ->setAttribute('fullname', 'Ahmadreza Bashari')
+            ->setAttribute('phone', '09xxxxxxxxx');
+
+        // Send notification
+        FacadesNotification::sendNow([$model], $this->notification);
+
+        $this->assertTrue(($success) ? true : false);
+    }
+
+    public function testNotificationCannotBeFireWithoutRouteNotification()
+    {
+        $this->expectException(RuntimeException::class);
+        $this->expectExceptionMessage("The notifiable doesn`t have 'routeNotificationFor' method");
+
+        // Fake model
+        $model = (new FakeModelWithoutRouteNotification)
+            ->setAttribute('fullname', 'Ahmadreza Bashari')
+            ->setAttribute('phone', '09xxxxxxxxx');
+
         FacadesNotification::sendNow([$model], $this->notification);
     }
 
@@ -52,7 +86,12 @@ class NotificationTest extends TestCase
         });
         // Mock Notification
         $notification = mock(OrderReceiveNotification::class);
-        $notification->shouldReceive('via')->andReturn([SmsirChannel::class]);
+        $notification->shouldReceive('via')
+            ->andReturn([SmsirChannel::class]);
+        $notification->shouldReceive('toSmsir')
+            ->andReturn((new SmsirMessage())
+            ->template_id(1)
+            ->parameters([]));
         $this->notification = $notification;
     }
 }
@@ -64,6 +103,29 @@ class FakeModel extends Model
     public function routeNotificationForSmsir()
     {
         return $this->phone;
+    }
+
+    public $filliable = [
+        'fullname',
+        'phone'
+    ];
+}
+
+class FakeModelWithoutRouteNotification extends Model
+{
+    public $filliable = [
+        'fullname',
+        'phone'
+    ];
+}
+
+class FakeModelRouteNotificationEmpty extends Model
+{
+    use RoutesNotifications;
+
+    public function routeNotificationForSmsir()
+    {
+        return ;
     }
 
     public $filliable = [
