@@ -2,9 +2,10 @@
 
 namespace Cryptommer\Smsir\Objects;
 
+use Cryptommer\Smsir\Contracts\Response;
 use Psr\Http\Message\StreamInterface;
 
-class ReceiveResponse {
+class ReceiveResponse implements Response {
 
 
     /**

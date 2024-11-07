@@ -3,6 +3,7 @@
 namespace Cryptommer\Smsir\Notifications;
 
 use Cryptommer\Smsir\Classes\Smsir;
+use Cryptommer\Smsir\Contracts\Response;
 use Illuminate\Notifications\Notification;
 
 class SmsirChannel
@@ -28,6 +29,10 @@ class SmsirChannel
         }
 
         $message = $notification->toSmsir($notifiable);
+
+        if($message instanceof Response) {
+            return $message;
+        };
 
         $response = $this->client->send()->verify($to, $message->template_id, $message->parameters);
 

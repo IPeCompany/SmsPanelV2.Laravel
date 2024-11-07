@@ -2,12 +2,13 @@
 
 namespace Cryptommer\Smsir\Objects;
 
+use Cryptommer\Smsir\Contracts\Response;
 use Illuminate\Support\Carbon;
 use PhpParser\Node\Expr\Array_;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamInterface;
 
-class ScheduleResponse {
+class ScheduleResponse implements Response {
 
     /**
      * @var String

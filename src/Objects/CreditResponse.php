@@ -2,9 +2,10 @@
 
 namespace Cryptommer\Smsir\Objects;
 
+use Cryptommer\Smsir\Contracts\Response;
 use Psr\Http\Message\StreamInterface;
 
-class CreditResponse {
+class CreditResponse implements Response {
     /**
      * @var int
      */
